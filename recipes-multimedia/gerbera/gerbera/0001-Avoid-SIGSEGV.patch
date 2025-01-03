@@ -1,0 +1,25 @@
+From 8c4d087b35108a74a9e3136e15d3c68eb5e425bb Mon Sep 17 00:00:00 2001
+From: Benoit Maricau <benoit.maricau@gmail.com>
+Date: Thu, 2 Jan 2025 14:35:47 +0100
+Subject: [PATCH] Avoid SIGSEGV
+
+---
+ src/server.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/server.cc b/src/server.cc
+index 0677584e..06dbf645 100644
+--- a/src/server.cc
++++ b/src/server.cc
+@@ -284,9 +284,9 @@ int Server::startupInterface(const std::string& iface, in_port_t inPort)
+             break;
+ 
+ #ifdef UPNP_HAVE_TOOLS
+-        log_warning("UPnP Init {}:{} failed: {} ({}). Retrying in {} seconds...", ifName, inPort, UpnpGetErrorMessage(ret), ret, attempt + 1);
++        log_warning("UPnP Init {}:{} failed: {} ({}). Retrying in {} seconds...", ifName?ifName:"NULL", inPort, UpnpGetErrorMessage(ret), ret, attempt + 1);
+ #else
+-        log_warning("UPnP Init {}:{} failed: ({}). Retrying in {} seconds...", ifName, inPort, ret, attempt + 1);
++        log_warning("UPnP Init {}:{} failed: ({}). Retrying in {} seconds...", ifName?ifName:"NULL", inPort, ret, attempt + 1);
+ #endif
+         std::this_thread::sleep_for(std::chrono::seconds(attempt + 1));
+     }

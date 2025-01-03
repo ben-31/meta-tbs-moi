@@ -1,0 +1,22 @@
+From 55eacea465ad0740fa60c1bf7a5463cf4c7e1964 Mon Sep 17 00:00:00 2001
+From: Benoit Maricau <benoit.maricau@gmail.com>
+Date: Thu, 2 Jan 2025 11:58:37 +0100
+Subject: [PATCH] set MAX_OBJECTS to 30000
+
+---
+ utils/mkyaffs2image.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/utils/mkyaffs2image.c b/utils/mkyaffs2image.c
+index 92f3f61..de8c11a 100644
+--- a/utils/mkyaffs2image.c
++++ b/utils/mkyaffs2image.c
+@@ -38,7 +38,7 @@
+ 
+ unsigned yaffs_trace_mask=0;
+ 
+-#define MAX_OBJECTS 10000
++#define MAX_OBJECTS 30000
+ 
+ // Adjust these to match your NAND LAYOUT:
+ #define chunkSize 2048

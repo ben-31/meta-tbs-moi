@@ -1,0 +1,32 @@
+This README file contains information on the contents of the meta-tbs-moi layer.
+
+Please see the corresponding sections below for details.
+
+Dependencies
+============
+
+  URI: https://github.com/openembedded/openembedded-core.git
+  branch: scarthgap
+
+Patches
+=======
+
+Please submit any patches against the meta-tbs-moi layer to 
+https://github.com/ben-31/meta-tbs-moi/compare
+
+Table of Contents
+=================
+
+  I. Adding the meta-tbs-moi layer to your build
+ II. Misc
+
+
+I. Adding the meta-tbs-moi layer to your build
+=================================================
+
+Run 'bitbake-layers add-layer meta-tbs-moi'
+
+II. Misc
+========
+
+--- replace with specific information about the meta-tbs-moi layer ---

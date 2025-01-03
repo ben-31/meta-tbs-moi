@@ -1,0 +1,23 @@
+From 976ca79aa95013e7b384a9661536639b7a73bbed Mon Sep 17 00:00:00 2001
+From: Benoit Maricau <benoit.maricau@gmail.com>
+Date: Thu, 2 Jan 2025 21:00:38 +0100
+Subject: [PATCH] RAND_seed commented out
+
+as it is not needed and stalled the machine
+---
+ src/main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main.c b/src/main.c
+index fa3a335d5..26507d33e 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -1254,7 +1254,7 @@ main(int argc, char **argv)
+   randseed.thread_id = (void *)main_tid;
+   gettimeofday(&randseed.tv, NULL);
+   uuid_random(randseed.ru, sizeof(randseed.ru));
+-  RAND_seed(&randseed, sizeof(randseed));
++  // RAND_seed(&randseed, sizeof(randseed));
+ 
+   /* Initialise configuration */
+   tvhftrace(LS_MAIN, notify_init);

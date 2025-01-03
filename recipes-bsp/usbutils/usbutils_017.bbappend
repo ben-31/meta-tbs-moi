@@ -1,0 +1,1 @@
+export LIBS="${@bb.utils.contains('PREFERRED_PROVIDER_virtual/libiconv', 'libiconv', '-liconv', '', d)}"
